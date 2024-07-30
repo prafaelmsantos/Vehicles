@@ -1,0 +1,13 @@
+﻿global using System.Text.Json.Serialization;
+global using AutoMoreira.Base.Lib.Host;
+global using HotChocolate.AspNetCore;
+global using HotChocolate.AspNetCore.Playground;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Versioning;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.OpenApi.Models;
+global using Vehicles.Core.DTO;
+global using Vehicles.GraphQL.ServicesRegistry;
+global using Vehicles.Persistence.Context;
+global using Vehicles.Persistence.Interfaces.Services;
+global using Vehicles.Persistence.ServicesRegistry;
