@@ -1,0 +1,21 @@
+version: '3.4'
+
+networks:
+  vehicles.api:
+
+services:
+  vehicles.api:
+    container_name: vehicles.api
+    image: ${DOCKER_REGISTRY-}vehiclesapi
+    build:
+      context: .
+      dockerfile: src/API/Vehicles.API/Dockerfile
+    ports:
+      - 5020:80
+      - 5021:443
+    environment:
+      - ASPNETCORE_URLS=https://+:443;http://+:80;
+      - CONNECTION_STRINGS=host=postgres;port=5432;Database=vehicles;User ID=sa;Password=password@12345#;Include Error Detail=true
+    restart: always
+    networks:
+      - vehicles.api
