@@ -25,7 +25,6 @@
                 {
 
                     webBuilder.UseStartup<Startup>();
-                    //webBuilder.SetKestrelOptions(false, false);
                 });
     }
 }
