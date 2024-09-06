@@ -8,6 +8,7 @@ env:
   DOCKER_IMAGE: 'vehiclesapi'
   DOCKER_FILE_PATH: './Vehicles.API/Dockerfile'
   GITHUB_FEED_URL: 'https://nuget.pkg.github.com/prafaelmsantos/index.json'
+  GITHUB_USERNAME: 'prafaelmsantos'
   GITHUB_TOKEN: ${{ secrets.TOKEN }}
   
 on:
@@ -36,7 +37,7 @@ jobs:
       run: |
         dotnet nuget add source ${{ env.GITHUB_FEED_URL }} \
           --name github \
-          --username ${{ github.actor }} \
+          --username ${{ GITHUB_USERNAME }} \
           --password ${{ secrets.GITHUB_TOKEN }} \
           --store-password-in-clear-text
 
