@@ -37,8 +37,8 @@ jobs:
       run: |
         dotnet nuget add source ${{ env.GITHUB_FEED_URL }} \
           --name github \
-          --username ${{ GITHUB_USERNAME }} \
-          --password ${{ secrets.GITHUB_TOKEN }} \
+          --username ${{ env.GITHUB_USERNAME }} \
+          --password ${{ env.GITHUB_TOKEN }} \
           --store-password-in-clear-text
 
     - name: Restore dependencies
