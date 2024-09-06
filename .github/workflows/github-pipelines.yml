@@ -74,3 +74,5 @@ jobs:
         file: ${{ env.DOCKER_FILE_PATH }}
         push: true
         tags: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE }}:latest
+        build-args: |
+          GITHUB_PASSWORD=${{ GITHUB_PASSWORD }}
