@@ -7,6 +7,8 @@ env:
   DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
   DOCKER_IMAGE: 'vehiclesapi'
   DOCKER_FILE_PATH: './Vehicles.API/Dockerfile'
+  GITHUB_FEED_URL: 'https://nuget.pkg.github.com/prafaelmsantos/index.json'
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
   
 on:
   push:
@@ -29,6 +31,14 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Add GitHub Packages as a NuGet source
+      run: |
+        dotnet nuget add source ${{ env.GITHUB_FEED_URL }} \
+          --name github \
+          --username ${{ github.actor }} \
+          --password ${{ secrets.GITHUB_TOKEN }} \
+          --store-password-in-clear-text
 
     - name: Restore dependencies
       run: dotnet restore ${{ env.SOLUTION_PATH }}
