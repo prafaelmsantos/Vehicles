@@ -6,7 +6,7 @@ env:
   DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
   DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
   DOCKER_IMAGE: 'vehiclesapi'
-  DOCKER_FILE_PATH: './Vehicles.API/Dockerfile'
+  DOCKER_FILE_PATH: './API/Vehicles.API/Dockerfile'
   GITHUB_FEED_URL: 'https://nuget.pkg.github.com/prafaelmsantos/index.json'
   GITHUB_USERNAME: 'prafaelmsantos'
   GITHUB_TOKEN: ${{ secrets.TOKEN }}
