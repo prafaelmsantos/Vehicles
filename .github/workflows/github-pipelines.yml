@@ -2,10 +2,11 @@ name: CI/CD Pipeline
 
 env:
   DOTNET_VERSION: '6.0.425'
-  SOLUTION_PATH: './AutoMoreira.sln'
+  SOLUTION_PATH: './Vehicles.sln'
   DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
   DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
-  DOCKER_FILE_PATH: './AutoMoreira.API/Dockerfile'
+  DOCKER_IMAGE: 'vehiclesapi'
+  DOCKER_FILE_PATH: './Vehicles.API/Dockerfile'
   
 on:
   push:
@@ -61,4 +62,4 @@ jobs:
         context: .
         file: ${{ env.DOCKER_FILE_PATH }}
         push: true
-        tags: ${{ env.DOCKER_HUB_USERNAME }}/automoreiraapi:latest
+        tags: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE }}:latest
