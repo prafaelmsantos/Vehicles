@@ -75,4 +75,5 @@ jobs:
         push: true
         tags: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE }}:latest
         build-args: |
-          GITHUB_PASSWORD=${{ GITHUB_PASSWORD }}
+          GITHUB_USERNAME=${{ github.actor }}
+          GITHUB_TOKEN=${{ env.GITHUB_TOKEN }}
