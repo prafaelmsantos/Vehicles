@@ -76,4 +76,4 @@ jobs:
         tags: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE }}:latest
         build-args: |
           GITHUB_USERNAME=${{ github.actor }}
-          GITHUB_TOKEN=${{ env.GITHUB_TOKEN }}
+          GITHUB_PASSWORD=${{ env.GITHUB_PASSWORD }}
