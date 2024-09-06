@@ -9,7 +9,7 @@ env:
   DOCKER_FILE_PATH: './src/API/Vehicles.API/Dockerfile'
   GITHUB_FEED_URL: 'https://nuget.pkg.github.com/prafaelmsantos/index.json'
   GITHUB_USERNAME: 'prafaelmsantos'
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  GITHUB_PASSWORD: ${{ secrets.TOKEN }}
   
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
         dotnet nuget add source ${{ env.GITHUB_FEED_URL }} \
           --name github \
           --username ${{ env.GITHUB_USERNAME }} \
-          --password ${{ env.GITHUB_TOKEN }} \
+          --password ${{ env.GITHUB_PASSWORD }} \
           --store-password-in-clear-text
 
     - name: Restore dependencies
