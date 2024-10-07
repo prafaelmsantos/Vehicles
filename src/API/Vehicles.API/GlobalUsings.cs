@@ -1,5 +1,4 @@
 ﻿global using System.Text.Json.Serialization;
-global using AutoMoreira.Base.Lib.Host;
 global using HotChocolate.AspNetCore;
 global using HotChocolate.AspNetCore.Playground;
 global using Microsoft.AspNetCore.Mvc;
